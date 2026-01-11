@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Laisser un message</title>
+</head>
+<body>
+
+  <p>
+    Nom :<br>
+    <input id="nom">
+  </p>
+
+  <p>
+    Message :<br>
+    <textarea id="message" rows="4"></textarea>
+  </p>
+
+  <p>
+    Note :<br>
+    <select id="note">
+      <option value="1">1 / 5</option>
+      <option value="2">2 / 5</option>
+      <option value="3">3 / 5</option>
+      <option value="4">4 / 5</option>
+      <option value="5">5 / 5</option>
+    </select>
+  </p>
+
+  <button onclick="envoyer()">Envoyer</button>
+
+  <script>
+    function envoyer() {
+      alert(
+        "Nom : " + nom.value + "\n" +
+        "Message : " + message.value + "\n" +
+        "Note : " + note.value + " / 5"
+      );
+    }
+  </script>
+
+</body>
+</html>
