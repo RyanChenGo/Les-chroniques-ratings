@@ -3,39 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <title>Laisser un message</title>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      text-align: center;
+      margin-top: 20vh;
+    }
+  </style>
 </head>
+
 <body>
 
-  <p>
-    Nom :<br>
-    <input id="nom">
-  </p>
+  <div id="content">
+    <h2>Laisser un message</h2>
 
-  <p>
-    Message :<br>
-    <textarea id="message" rows="4"></textarea>
-  </p>
+    <p>
+      Nom<br>
+      <input id="nom">
+    </p>
 
-  <p>
-    Note :<br>
-    <select id="note">
-      <option value="1">1 / 5</option>
-      <option value="2">2 / 5</option>
-      <option value="3">3 / 5</option>
-      <option value="4">4 / 5</option>
-      <option value="5">5 / 5</option>
-    </select>
-  </p>
+    <p>
+      Message<br>
+      <textarea id="message" rows="4"></textarea>
+    </p>
 
-  <button onclick="envoyer()">Envoyer</button>
+    <p>
+      Note<br>
+      <select id="note">
+        <option value="1">1 / 5</option>
+        <option value="2">2 / 5</option>
+        <option value="3">3 / 5</option>
+        <option value="4">4 / 5</option>
+        <option value="5">5 / 5</option>
+      </select>
+    </p>
+
+    <button onclick="envoyer()">Envoyer</button>
+  </div>
 
   <script>
     function envoyer() {
-      alert(
-        "Nom : " + nom.value + "\n" +
-        "Message : " + message.value + "\n" +
-        "Note : " + note.value + " / 5"
-      );
+      document.body.innerHTML =
+        "<h2>Message envoyé</h2><p>Merci pour votre message.</p>";
+
+      setTimeout(() => {
+        window.history.back();
+      }, 3000);
     }
   </script>
 
